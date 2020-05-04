@@ -1,7 +1,12 @@
-import 'dart:io' show Platform;
-import 'package:contacts/ui/android/andoid.app.dart';
+import 'dart:io';
+import 'package:contacts/ios/ios.app.dart';
 import 'package:flutter/material.dart';
+import 'package:contacts/android/android.app.dart';
 
-void main() => runApp(AndroidApp());
-//void main() => Platform.isIOS ? runApp(IOSApp()) : runApp(AndroidApp());
-// void main() => Platform.isIOS ? runApp(AndroidApp()) : runApp(AndroidApp());
+void main() {
+  if (Platform.isIOS) {
+    runApp(IOSApp());
+  } else {
+    runApp(AndroidApp());
+  }
+}
